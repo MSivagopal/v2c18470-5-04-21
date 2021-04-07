@@ -1,0 +1,13 @@
+package assign;
+
+interface Interface1 {
+	public static void runs() {
+		System.out.println("Interface1");
+	}
+}
+public interface Interface1Main {
+	public static void main(String[] args) {
+	System.out.println("Interface1Main");
+	Interface1.runs();
+}
+}

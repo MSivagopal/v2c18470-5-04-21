@@ -1,0 +1,43 @@
+package assign;
+
+interface A11{
+	default void rrun() {
+		System.out.println("aa1");
+	}
+}
+interface B21{
+	public int show();
+	abstract void run();
+}
+interface C31{
+	default void rrun() {
+		System.out.println("aa2");
+	}
+	public int show();
+	abstract void run();
+	
+}
+public class Interface2Main implements A11,B21,C31 {
+	@Override
+	public void run() {
+		System.out.println("bye");
+	}
+	@Override
+	//this is code is not here it will print line 13
+	public void rrun() {
+		System.out.println("aa");
+		A11.super.rrun();//this line call interface A11
+		C31.super.rrun();//this line call interface C31
+	}
+	@Override
+	public int show() {
+		System.out.println("hi");
+		return 0;
+	}
+	public static void main(String[] args) {
+		Interface2Main in = new Interface2Main();
+		in.show();
+		in.rrun();
+		in.run();
+	}
+}
